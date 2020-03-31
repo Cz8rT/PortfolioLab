@@ -1,8 +1,8 @@
 import React from "react";
 
-const Start = () => {
+const Start = ({ id }) => {
     return (
-        <h1>Komponent Start</h1>
+        <h1 id={id}>Komponent Start</h1>
     )
 };
 
