@@ -1,8 +1,13 @@
 import React from "react";
+import NotLogged from "./NotLogged/NotLogged";
+import Navigation from "./Navigation/Navigation"
 
 const HomeHeader = () => {
     return (
-        <span>zaloguj</span>
+        <header>
+            <NotLogged/>
+            <Navigation/>
+        </header>
     )
 };
 

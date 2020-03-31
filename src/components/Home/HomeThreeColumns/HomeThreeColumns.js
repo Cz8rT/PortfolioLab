@@ -2,7 +2,7 @@ import React from "react";
 
 const HomeThreeColumns = () => {
     return (
-        <span>wyloguj</span>
+        <h2>Komponent HomeThreeColumns</h2>
     )
 };
 
