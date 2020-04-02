@@ -1,8 +1,18 @@
 import React from "react";
 
-const AboutUs = ({ id }) => {
+const AboutUs = ({id}) => {
     return (
-        <h1 id={id}>Komponent AboutUs</h1>
+        <section id={id}>
+            <div id={"aboutUsInfo"}>
+                <div className={"title_container"}>
+                    <h3>O nas</h3>
+                </div>
+                <p>Nori grape silver beet broccoli kombu beet<br/> greens fava
+                    bean potato quandong celery.<br/> Bunya nuts black-eyed pea
+                    prairie turnip leek<br/> lentil turnip greens parsnip.</p>
+            </div>
+            <div id={"imgPeople"}/>
+        </section>
     )
 };
 

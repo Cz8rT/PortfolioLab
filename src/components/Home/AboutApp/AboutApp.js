@@ -19,7 +19,7 @@ const AboutApp = ({id}) => {
                 <Step img={imgCycle} alt={"Cycle arrows"} title={"Zamów kuriera"} description1={"kurier przyjedzie"} description2={"w dogodnym terminie"}/>
             </div>
             <Link className="loginLink" to={'/logowanie'}>
-                <button>oddaj rzeczy</button>
+                <button>oddaj<br/>rzeczy</button>
             </Link>
         </div>
     )
