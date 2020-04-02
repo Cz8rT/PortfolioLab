@@ -17,11 +17,12 @@ const Home = () => {
                     <Start id="start"/>
                 </div>
             </section>
+            <HomeThreeColumns id="homeThreeColumns"/>
             <AboutApp id="aboutApp"/>
             <AboutUs id="aboutUs"/>
             <Foundations id="foundations"/>
             <Contact id="contact"/>
-            <HomeThreeColumns/>
+
         </>
     );
 };

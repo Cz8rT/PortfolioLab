@@ -1,8 +1,13 @@
 import React from "react";
+import Achevement from "./Achievement/Achievement";
 
-const HomeThreeColumns = () => {
+const HomeThreeColumns = ({ id }) => {
     return (
-        <h2>Komponent HomeThreeColumns</h2>
+        <section id={id}>
+            <Achevement number={10} title={"oddanych worków"}/>
+            <Achevement number={5} title={"wspartych organizacji"}/>
+            <Achevement number={7} title={"zorganizowanych zbiórek"}/>
+        </section>
     )
 };
 

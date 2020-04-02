@@ -1,0 +1,29 @@
+#homeThreeColumns {
+  background-image: url("../../../assets/3 Columns Background.png");
+  display: flex;
+  justify-content: space-evenly;
+  div {
+    width: 20.875rem;
+    text-align: center;
+    margin-top: 2.875rem;
+    margin-bottom: 5.375rem;
+    span {
+      font-size: 5.625rem;
+      color: $colorBrown;
+      font-weight: 300;
+    }
+    h3 {
+      font-size: 1.125rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    p {
+      font-family: $font-alt;
+      font-size: 0.875rem;
+      font-weight: 300;
+      letter-spacing: -0.36px;
+    }
+  }
+}
