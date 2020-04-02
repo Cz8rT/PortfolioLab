@@ -1,0 +1,47 @@
+#foundations {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 4.375rem 0;
+
+  .title_container {
+    h3 {
+      font-size: 2.25rem;
+      font-weight: 400;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.76px;
+    }
+
+    &::after {
+      content: url("./../../../assets/Decoration.svg");
+    }
+  }
+
+  .btn_container {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-top: 3rem;
+    button {
+      width: 13rem;
+      height: 5rem;
+      font-weight: 400;
+      background-color: #fff;
+      border: none;
+      &:nth-child(2) {
+        margin: 0 4rem;
+      }
+      &:hover {
+        cursor: pointer;
+        color: $colorGray;
+      }
+      &:active {
+        background-color: #ddd;
+      }
+      &.active {
+        border: 1px $colorDarkGray solid;
+      }
+    }
+  }
+}
