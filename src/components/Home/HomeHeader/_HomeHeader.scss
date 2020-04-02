@@ -1,0 +1,44 @@
+.main_section header {
+  font-family: $font-base;
+  font-size: 0.875rem;
+  padding-top: 2.3rem;
+  text-align: right;
+  text-decoration: none;
+  .loginLink {
+    text-decoration: none;
+    color: $colorGray;
+    padding: 0.625rem;
+    &:first-child {
+      margin-right: 1rem;
+    }
+    &:hover {
+      color: $colorDarkGray;
+    }
+  }
+  .registerLink {
+    border: 1px $colorYellow solid;
+    margin-right: 1rem;
+  }
+  nav ul{
+    font-size: 1.125rem;
+    list-style: none;
+    color: $colorDarkGray;
+    margin-top: 1.8rem;
+    li {
+      display: inline-block;
+      margin-right: 2.5rem;
+      padding: 0.5rem 1rem;
+      &:last-child {
+        margin-right: 0;
+      }
+      &:hover {
+        cursor: pointer;
+        color: $colorGray;
+      }
+      &:active {
+        border: 1px $colorDarkGray solid;
+        padding: calc(0.5rem - 2px) calc(1rem - 1px);
+      }
+    }
+  }
+}

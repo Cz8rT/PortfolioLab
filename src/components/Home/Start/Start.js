@@ -1,8 +1,18 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
-const Start = ({ id }) => {
+const Start = ({id}) => {
     return (
-        <h1 id={id}>Komponent Start</h1>
+        <div id={(id)}>
+            <div>
+                <h1>Zacznij pomagać!</h1>
+                <h2>Oddaj niechciane rzeczy w zaufane ręce</h2>
+            </div>
+            <div>
+                <Link className="loginLink" to={'/logowanie'}><button>oddaj rzeczy</button></Link>
+                <Link className="loginLink" to={'/logowanie'}><button>zorganizuj zbiórkę</button></Link>
+            </div>
+        </div>
     )
 };
 

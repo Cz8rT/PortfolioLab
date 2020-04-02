@@ -1,8 +1,8 @@
 import React from "react";
 
-const Foundations = () => {
+const Foundations = ({ id }) => {
     return (
-        <h1 style={{ height: '100vh'  }}>Komponent Foundations</h1>
+        <h1 id={id} style={{ height: '100vh'  }}>Komponent Foundations</h1>
     )
 };
 

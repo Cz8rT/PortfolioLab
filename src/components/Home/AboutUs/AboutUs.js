@@ -1,8 +1,8 @@
 import React from "react";
 
-const AboutUs = () => {
+const AboutUs = ({ id }) => {
     return (
-        <h1>Komponent AboutUs</h1>
+        <h1 id={id}>Komponent AboutUs</h1>
     )
 };
 

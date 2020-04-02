@@ -1,0 +1,18 @@
+@import "./HomeHeader/_HomeHeader.scss";
+@import "./Start/_Start.scss";
+
+.main_section {
+  display: flex;
+  #homeHero_img {
+    background-image: url("./../../assets/Home-Hero-Image.jpg");
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    width: 55rem;
+    height: 60rem;
+  }
+
+  #headerStart_container{
+    margin-right: 8.5rem;
+  }
+}

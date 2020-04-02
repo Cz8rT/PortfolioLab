@@ -10,8 +10,13 @@ import Contact from "./Contact/Contact";
 const Home = () => {
     return (
         <>
-            <HomeHeader/>
-            <Start id="start"/>
+            <section className={"main_section"}>
+                <div id={"homeHero_img"} />
+                <div id={"headerStart_container"}>
+                    <HomeHeader/>
+                    <Start id="start"/>
+                </div>
+            </section>
             <AboutApp id="aboutApp"/>
             <AboutUs id="aboutUs"/>
             <Foundations id="foundations"/>

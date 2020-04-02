@@ -4,8 +4,8 @@ import {Link} from "react-router-dom";
 const NotLogged = () => {
     return (
         <>
-            <Link to={'/logowanie'}>Zaloguj</Link>
-            <Link to={'/rejestracja'}>Załóż konto</Link>
+            <Link className="loginLink" to={'/logowanie'}>Zaloguj</Link>
+            <Link className="loginLink registerLink" to={'/rejestracja'}>Załóż konto</Link>
         </>
     )
 };
