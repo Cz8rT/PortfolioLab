@@ -1,0 +1,74 @@
+.foundationType_container {
+  margin-top: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  > p {
+    width: 40rem;
+    font-size: 1.375rem;
+    line-height: 1.875rem;
+    margin-bottom: 2rem;
+  }
+  ul {
+    width: 84rem;
+    list-style: none;
+    text-align: left;
+    li {
+      display: flex;
+      justify-content: space-between;
+      padding: 2rem 0;
+      border-bottom: 1px $colorBorder solid;
+      h4 {
+        font-family: $font-alt;
+        font-size: 1.625rem;
+        line-height: 1.9375rem;
+        font-weight: 300;
+        margin: 0;
+      }
+      p {
+        font-family: $font-alt;
+        font-size: 1.125rem;
+        line-height: 1.375rem;
+        font-weight: 300;
+        font-style: italic;
+        margin-top: 0.5rem;
+      }
+      > p {
+        font-style: normal;
+        margin-top: 1rem;
+        margin-right: 1rem;
+      }
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+  .paginationList {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    li{
+      display: inline-block;
+      border-bottom: none;
+      button {
+        width: 2.5rem;
+        height: 3.125rem;
+        font-size: 1.125rem;
+        color: $colorDarkGray;
+        border: none;
+        background-color: #fff;
+        margin-right: 1rem;
+        &:hover {
+          cursor: pointer;
+          color: $colorGray;
+        }
+        &:active {
+          background-color: #eee;
+        }
+        &.active {
+          border: 1px $colorBorder solid;
+        }
+      }
+    }
+  }
+}
