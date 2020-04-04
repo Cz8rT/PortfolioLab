@@ -11,7 +11,7 @@ const Home = () => {
     return (
         <>
             <section className={"main_section"}>
-                <div id={"homeHero_img"} />
+                <div id={"homeHero_img"}/>
                 <div id={"headerStart_container"}>
                     <HomeHeader/>
                     <Start id="start"/>
@@ -22,7 +22,6 @@ const Home = () => {
             <AboutUs id="aboutUs"/>
             <Foundations id="foundations"/>
             <Contact id="contact"/>
-
         </>
     );
 };
