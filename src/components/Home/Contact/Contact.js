@@ -1,14 +1,15 @@
 import React from "react";
 import facebookImg from "./../../../assets/Facebook.svg";
 import instagramImg from "./../../../assets/Instagram.svg";
+import ContactForm from "./ContactForm/ContactForm";
 
 const Contact = ({ id }) => {
     return (
-        <section id={"contact"}>
-            <div id={"form_container"}>
-                <div id={"imgForm"}/>
+        <section id={id}>
+            <div id={"contact_container"}>
+                <div id={"imgContact"}/>
                 <div id={"contactForm"}>
-                    <form>fdsfsdfsd</form>
+                    <ContactForm/>
                 </div>
             </div>
             <footer>

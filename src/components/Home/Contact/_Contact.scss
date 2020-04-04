@@ -1,14 +1,17 @@
+@import "ContactForm/_ContactForm";
+
 #contact {
   position: relative;
-  #form_container {
+  #contact_container {
     display: flex;
 
-    #imgForm {
+    #imgContact {
       width: 100%;
       height: 1026px;
       background-image: url("./../../../assets/Background-Contact-Form.jpg");
       background-repeat: no-repeat;
-      opacity: 0.3;
+      background-size: cover;
+      opacity: 0.2;
     }
     #contactForm {
 
@@ -17,7 +20,7 @@
   footer {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     position: absolute;
     left: 45%;
     bottom: 1rem;
