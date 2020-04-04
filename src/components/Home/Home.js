@@ -3,7 +3,7 @@ import HomeHeader from "./HomeHeader/HomeHeader";
 import HomeThreeColumns from "./HomeThreeColumns/HomeThreeColumns";
 import Start from "./Start/Start";
 import AboutApp from "./AboutApp/AboutApp";
-import AboutUs from "./AboutUs/AboutUs";
+import AboutUs from "./AboutUs";
 import Foundations from "./Foundations/Foundations";
 import Contact from "./Contact/Contact";
 
