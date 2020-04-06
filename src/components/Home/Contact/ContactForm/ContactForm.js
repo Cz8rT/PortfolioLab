@@ -1,11 +1,15 @@
 import React, {useState} from "react";
-import {Form, Field} from "react-final-form";
+import {Form} from "react-final-form";
+import FirstNameField from "./ContactFields/FirstNameField/FirstNameField";
+import EmailField from "./ContactFields/EmailField/EmailField";
+import MsgField from "./ContactFields/MsgField/MsgField";
 
 const ContactForm = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [msg, setMsg] = useState("");
     const [server, setServer] = useState(undefined);
+    const [error, setError] = useState(undefined);
 
     const userObject = {
         name: name,
@@ -14,7 +18,6 @@ const ContactForm = () => {
     };
 
     const sendMessage = () => {
-        console.log("Wysłano wiadomość!");
         console.log(userObject);
         fetch(`https://fer-api.coderslab.pl/v1/portfolio/contact`, {
             method: "post",
@@ -28,7 +31,11 @@ const ContactForm = () => {
             }).then(res => {
             console.log(res);
             setServer(res);
-        });
+        })
+        .catch((error) => {
+            console.log(error);
+            setError(error);
+        })
     };
 
     const nameInputHandler = (event) => {
@@ -43,24 +50,6 @@ const ContactForm = () => {
         setMsg(event.target.value);
     };
 
-    const firstNameValidation = () => {
-        return (
-            1 ? undefined : "Podane imię jest nieprawidłowe!"
-        )
-    };
-
-    const emailValidation = () => {
-        return (
-            1 ? undefined : "Podany email jest nieprawidłowy!"
-        )
-    };
-
-    const messageValidation = () => {
-        return (
-            1 ? undefined : "Wiadomość musi mieć conajmniej 120 znaków!"
-        )
-    };
-
     return (
         <Form onSubmit={sendMessage}>
             {({handleSubmit, submitting}) => <form onSubmit={handleSubmit}>
@@ -69,66 +58,13 @@ const ContactForm = () => {
                 </div>
                 {server && <p id={"successMsg"}>Wiadomość została wysłana!
                     <br/>Wkrótce się skontaktujemy.</p>}
+                {error && <p id={"errorMsg"}>Coś poszło nie tak!
+                    <br/>Błąd: {error}</p>}
                 <div className={"nameEmail_container"}>
-
-                    <Field name={"firstName"}
-                           component="input"
-                           placeholder={"Krzysztof"}
-                           validate={firstNameValidation}>
-                        {({input, meta, placeholder}) => (
-                            <div>
-                                <div className={"input_container"}>
-                                    <label>Wpisz swoje imię</label>
-                                    <input {...input}
-                                           placeholder={placeholder}
-                                           value={name}
-                                           onChange={nameInputHandler}/>
-                                </div>
-                                {meta.error && meta.touched && <p>{meta.error}</p>}
-                            </div>
-                        )}
-                    </Field>
-
-                    <Field name={"email"}
-                           component="input"
-                           placeholder={"abc@xyz.pl"}
-                           validate={emailValidation}>
-                        {({input, meta, placeholder}) => (
-                            <div>
-                                <div className={"input_container"}>
-                                    <label>Wpisz swój email</label>
-                                    <input {...input}
-                                           placeholder={placeholder}
-                                           value={email}
-                                           onChange={emailInputHandler}/>
-                                </div>
-                                {meta.error && meta.touched && <p>{meta.error}</p>}
-                            </div>
-                        )}
-                    </Field>
+                    <FirstNameField name={name} nameInputHandler={nameInputHandler}/>
+                    <EmailField email={email} emailInputHandler={emailInputHandler}/>
                 </div>
-                <Field name={"userMessage"}
-                       component="textarea"
-                       rows={4}
-                       placeholder={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
-                       "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
-                       "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi " +
-                       "ut aliquip ex ea commodo consequat."}
-                       validate={messageValidation}>
-                    {({input, meta, rows, placeholder}) => (
-                        <div className={"textarea_container"}>
-                            <div className={"input_container"}>
-                                <label>Wpisz swoją wiadomość</label>
-                                <textarea {...input}
-                                          rows={rows}
-                                          placeholder={placeholder}
-                                          value={msg}
-                                          onChange={msgInputHandler}/>
-                            </div>
-                            {meta.error && meta.touched && <p>{meta.error}</p>}
-                        </div>
-                    )}
-                </Field>
+                <MsgField msg={msg} msgInputHandler={msgInputHandler}/>
                 <button type={"submit"} disabled={submitting}>Wyślij</button>
             </form>}
         </Form>
