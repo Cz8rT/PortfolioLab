@@ -1,20 +1,19 @@
 import React from "react";
 import {Field} from "react-final-form";
-import {emailValidation} from "../../../../../../validation";
+import {emailValidation} from "../../../../../validation";
 
 const EmailField = ({email, emailInputHandler}) => {
+
     return (
         <Field name={"email"}
                component="input"
-               placeholder={"abc@xyz.pl"}
                validate={emailValidation}
                defaultValue={email}>
-            {({input, meta, placeholder}) => (
+            {({input, meta}) => (
                 <div>
                     <div className={"input_container"}>
-                        <label>Wpisz swój email</label>
+                        <label>Email</label>
                         <input {...input}
-                               placeholder={placeholder}
                                value={email}
                                onChange={emailInputHandler}/>
                     </div>

@@ -1,18 +1,8 @@
 import React from "react";
 import {Field} from "react-final-form";
+import {firstNameValidation} from "../../../../../../validation";
 
 const FirstNameField = ({name, nameInputHandler}) => {
-
-    const firstNameValidation = (value) => {
-        if (value.length === 0) {
-            return "Podane imię jest nieprawidłowe!"
-        } else if (value.split("").includes(" ")){
-            return "Imię nie może zawierać spacji!"
-        } else {
-            return undefined
-        }
-    };
-
     return (
         <Field name={"firstName"}
                component="input"

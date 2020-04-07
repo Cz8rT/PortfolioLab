@@ -1,16 +1,8 @@
 import React from "react";
 import {Field} from "react-final-form";
+import {messageValidation} from "../../../../../../validation";
 
 const MsgField = ({msg, msgInputHandler}) => {
-
-    const messageValidation = (value) => {
-        if (value.length < 120) {
-            return "Wiadomość musi mieć conajmniej 120 znaków!"
-        } else {
-            return undefined
-        }
-    };
-
     return (
         <Field name={"userMessage"}
                component="textarea"
