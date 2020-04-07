@@ -62,4 +62,17 @@ const messageValidation = (value) => {
     }
 };
 
- export {emailValidation, firstNameValidation, messageValidation};
+// Password validation with confirmation
+const passwordValidation = (password) => (value) => {
+    if (value.length < 6) {
+        return "Podane hasło jest za krótkie!"
+    } else if (value.split("").includes(" ")){
+        return "Hasło nie może zawierać spacji!"
+    } else if (value !== password) {
+        return "Podane hasła muszą być jednakowe!"
+    } else {
+        return undefined
+    }
+};
+
+ export {emailValidation, firstNameValidation, messageValidation, passwordValidation};

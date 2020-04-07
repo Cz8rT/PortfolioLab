@@ -1,21 +1,22 @@
 import React from "react";
 import {Field} from "react-final-form";
-import {emailValidation} from "../../../../../validation";
+import {passwordValidation} from "../../../../../validation";
 
-const PasswordField = ({email, emailInputHandler, title}) => {
+const PasswordField = ({name, password, passInputHandler, title, confirm}) => {
 
     return (
-        <Field name={"email"}
+        <Field name={name}
                component="input"
-               validate={emailValidation}
-               defaultValue={email}>
+               validate={passwordValidation(confirm)}
+               defaultValue={password}>
             {({input, meta}) => (
                 <div>
                     <div className={"input_container"}>
                         <label>{title}</label>
                         <input {...input}
-                               value={email}
-                               onChange={emailInputHandler}/>
+                               value={password}
+                               onChange={passInputHandler}
+                               type={"password"}/>
                     </div>
                     {meta.error && meta.touched && <p>{meta.error}</p>}
                 </div>

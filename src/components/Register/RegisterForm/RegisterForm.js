@@ -6,22 +6,40 @@ import PasswordField from "../../Login/LoginForm/LoginFields/PasswordField/Passw
 
 const RegisterForm = () => {
     const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirm, setConfirm] = useState("");
 
-    const sendLogin = () => {
-        console.log("zalogowano")
+    const sendRegister = () => {
+        console.log("Użytkownik zarejestrowany")
     };
 
     const emailInputHandler = (event) => {
         setEmail(event.target.value);
     };
 
+    const passwordInputHandler = (event) => {
+        setPassword(event.target.value);
+    };
+
+    const rePassInputHandler = (event) => {
+        setConfirm(event.target.value);
+    };
+
     return (
-        <Form onSubmit={sendLogin}>
+        <Form onSubmit={sendRegister}>
             {({handleSubmit, submitting}) => <form onSubmit={handleSubmit}>
                 <div className={"fields_container"}>
                     <EmailField email={email} emailInputHandler={emailInputHandler}/>
-                    <PasswordField email={email} emailInputHandler={emailInputHandler} title={"Hasło"}/>
-                    <PasswordField email={email} emailInputHandler={emailInputHandler} title={"Powtórz hasło"}/>
+                    <PasswordField name={"password"}
+                                   password={password}
+                                   passInputHandler={passwordInputHandler}
+                                   title={"Hasło"}
+                                   confirm={password}/>
+                    <PasswordField name={"rePass"}
+                                   password={confirm}
+                                   passInputHandler={rePassInputHandler}
+                                   title={"Powtórz hasło"}
+                                   confirm={password}/>
                 </div>
                 <div className={"btn_container"}>
                     <Link className="loginLink" to={'/logowanie'}>Zaloguj się</Link>
