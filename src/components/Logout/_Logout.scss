@@ -1,0 +1,13 @@
+#logout #logoutBox .logoutLink {
+  font-size: 1.125rem;
+  color: $colorDarkGray;
+  text-decoration: none;
+  padding: 1rem;
+  border: 1px $colorBorder solid;
+  &:hover {
+    color: $colorGray;
+  }
+  &:active {
+    background-color: #eee;
+  }
+}

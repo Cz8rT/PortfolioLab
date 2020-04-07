@@ -1,8 +1,8 @@
-#login, #register {
+#login, #register, #logout {
   margin-right: 8.5rem;
   color: $colorDarkGray;
 
-  #loginBox, #registerBox {
+  #loginBox, #registerBox, #logoutBox {
     margin: 7rem;
     text-align: center;
     display: flex;
