@@ -2,7 +2,7 @@ import React from "react";
 import {Field} from "react-final-form";
 import {emailValidation} from "../../../../../validation";
 
-const PasswordField = ({email, emailInputHandler}) => {
+const PasswordField = ({email, emailInputHandler, title}) => {
 
     return (
         <Field name={"email"}
@@ -12,7 +12,7 @@ const PasswordField = ({email, emailInputHandler}) => {
             {({input, meta}) => (
                 <div>
                     <div className={"input_container"}>
-                        <label>Hasło</label>
+                        <label>{title}</label>
                         <input {...input}
                                value={email}
                                onChange={emailInputHandler}/>
