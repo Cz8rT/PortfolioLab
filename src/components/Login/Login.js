@@ -1,8 +1,12 @@
 import React from "react";
+import AppHeader from "../AppHeader/AppHeader";
 
 const Login = () => {
     return (
-        <span>Logowanie</span>
+        <section id={"login"}>
+            <AppHeader/>
+            <span>Logowanie</span>
+        </section>
     )
 };
 

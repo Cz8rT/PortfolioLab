@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-const NotLogged = () => {
+const UserStatusBar = () => {
     return (
         <>
             <Link className="loginLink" to={'/logowanie'}>Zaloguj</Link>
@@ -10,4 +10,4 @@ const NotLogged = () => {
     )
 };
 
-export default NotLogged;
+export default UserStatusBar;

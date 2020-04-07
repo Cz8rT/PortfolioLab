@@ -1,5 +1,5 @@
 import React from "react";
-import HomeHeader from "./HomeHeader/HomeHeader";
+import AppHeader from "../AppHeader/AppHeader";
 import HomeThreeColumns from "./HomeThreeColumns/HomeThreeColumns";
 import Start from "./Start/Start";
 import AboutApp from "./AboutApp/AboutApp";
@@ -13,7 +13,7 @@ const Home = () => {
             <section className={"main_section"}>
                 <div id={"homeHero_img"}/>
                 <div id={"headerStart_container"}>
-                    <HomeHeader/>
+                    <AppHeader/>
                     <Start id="start"/>
                 </div>
             </section>
