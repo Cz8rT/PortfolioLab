@@ -24,8 +24,9 @@
       line-height: 2.875rem;
       text-transform: uppercase;
       text-align: center;
+      color: $colorDarkGray;
       background-color: #fff;
-      border: 1px $colorDarkGray solid;
+      border: 1px $colorBorder solid;
       &:hover {
         cursor: pointer;
         color: $colorGray;
