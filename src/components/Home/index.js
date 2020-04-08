@@ -1,11 +1,11 @@
 import React from "react";
-import AppHeader from "../AppHeader/AppHeader";
-import HomeThreeColumns from "./HomeThreeColumns/HomeThreeColumns";
-import Start from "./Start/Start";
-import AboutApp from "./AboutApp/AboutApp";
+import AppHeader from "../AppHeader";
+import HomeThreeColumns from "./HomeThreeColumns";
+import Start from "./Start";
+import AboutApp from "./AboutApp";
 import AboutUs from "./AboutUs";
-import Foundations from "./Foundations/Foundations";
-import Contact from "./Contact/Contact";
+import Foundations from "./Foundations";
+import Contact from "./Contact";
 
 const Home = () => {
     return (

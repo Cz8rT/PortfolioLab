@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import Pagination from "../../../Pagination/Pagination";
+import Pagination from "../../../Pagination";
 
 const FoundationType = ({text, list}) => {
     const [currentPage, setCurrentPage] = useState(1);
