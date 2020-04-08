@@ -1,11 +1,11 @@
 import React from "react";
-import AppHeader from "../AppHeader/AppHeader";
 import {Link} from "react-router-dom";
+import ToMainPage from "../ToMainPage";
 
 const Logout = () => {
     return (
         <section id={"logout"}>
-            <AppHeader/>
+            <ToMainPage/>
             <div id={"logoutBox"}>
                 <div className={"title_container"}>
                     <h1>Wylogowanie nastąpiło<br/>pomyślnie!</h1>

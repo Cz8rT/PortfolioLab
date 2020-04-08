@@ -1,6 +1,6 @@
 import React from "react";
 import {Field} from "react-final-form";
-import {emailValidation} from "../../../../../../validation";
+import {emailValidation} from "../../../../../../config/validation";
 
 const EmailField = ({email, emailInputHandler}) => {
     return (

@@ -1,11 +1,11 @@
 import React from "react";
-import AppHeader from "../AppHeader/AppHeader";
 import RegisterForm from "./RegisterForm/RegisterForm";
+import ToMainPage from "../ToMainPage";
 
 const Register = () => {
     return (
         <section id={"register"}>
-            <AppHeader/>
+            <ToMainPage/>
             <div id={"registerBox"}>
                 <div className={"title_container"}>
                     <h1>Załóż konto</h1>

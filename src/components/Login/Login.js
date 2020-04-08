@@ -1,11 +1,11 @@
 import React from "react";
-import AppHeader from "../AppHeader/AppHeader";
 import LoginForm from "./LoginForm/LoginForm";
+import ToMainPage from "../ToMainPage";
 
 const Login = () => {
     return (
         <section id={"login"}>
-            <AppHeader/>
+            <ToMainPage/>
             <div id={"loginBox"}>
                 <div className={"title_container"}>
                     <h1>Zaloguj się</h1>

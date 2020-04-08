@@ -1,6 +1,6 @@
 import React from "react";
 import {Field} from "react-final-form";
-import {passwordValidation} from "../../../../../validation";
+import {passwordValidation} from "../../../../../config/validation";
 
 const PasswordField = ({name, password, passInputHandler, title, confirm}) => {
 

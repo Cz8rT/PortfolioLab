@@ -1,6 +1,6 @@
 import React from "react";
 import {Field} from "react-final-form";
-import {messageValidation} from "../../../../../../validation";
+import {messageValidation} from "../../../../../../config/validation";
 
 const MsgField = ({msg, msgInputHandler}) => {
     return (

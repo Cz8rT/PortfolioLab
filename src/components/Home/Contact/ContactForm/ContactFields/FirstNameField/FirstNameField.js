@@ -1,6 +1,6 @@
 import React from "react";
 import {Field} from "react-final-form";
-import {firstNameValidation} from "../../../../../../validation";
+import {firstNameValidation} from "../../../../../../config/validation";
 
 const FirstNameField = ({name, nameInputHandler}) => {
     return (
