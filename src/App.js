@@ -9,6 +9,8 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Logout from "./components/Logout";
 import {AuthProvider} from "./config/Auth";
+import PrivateRoute from "./config/PrivateRoute";
+import Giveaway from "./components/Giveaway";
 
 function App() {
     return (
@@ -20,6 +22,7 @@ function App() {
                         <Route path='/logowanie' component={Login}/>
                         <Route path='/rejestracja' component={Register}/>
                         <Route path='/wylogowano' component={Logout}/>
+                        <PrivateRoute path='/oddaj-rzeczy' component={Giveaway}/>
                     </Switch>
                 </div>
             </Router>

@@ -9,7 +9,7 @@ const Start = ({id}) => {
                 <h2>Oddaj niechciane rzeczy w zaufane ręce</h2>
             </div>
             <div>
-                <Link className="loginLink" to={'/logowanie'}><button>oddaj<br/>rzeczy</button></Link>
+                <Link className="loginLink" to={'/oddaj-rzeczy'}><button>oddaj<br/>rzeczy</button></Link>
                 <Link className="loginLink" to={'/logowanie'}><button>zorganizuj zbiórkę</button></Link>
             </div>
         </div>

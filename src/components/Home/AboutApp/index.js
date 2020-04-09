@@ -18,7 +18,7 @@ const AboutApp = ({id}) => {
                 <Step img={imgLoupe} alt={"Magnifying glass"} title={"Zdecyduj komu chcesz pomóc"} description1={"wybierz zaufane"} description2={"miejsce"}/>
                 <Step img={imgCycle} alt={"Cycle arrows"} title={"Zamów kuriera"} description1={"kurier przyjedzie"} description2={"w dogodnym terminie"}/>
             </div>
-            <Link className="loginLink" to={'/logowanie'}>
+            <Link className="loginLink" to={'/oddaj-rzeczy'}>
                 <button>oddaj<br/>rzeczy</button>
             </Link>
         </div>
