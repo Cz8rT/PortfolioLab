@@ -1,4 +1,5 @@
-import React, {useState} from "react";
+import React, {useState, useCallback} from "react";
+import app from "../../../config/firebase";
 import {Form} from "react-final-form";
 import {Link} from "react-router-dom";
 import EmailField from "../../Login/LoginForm/LoginFields/EmailField/EmailField";
@@ -9,9 +10,17 @@ const RegisterForm = () => {
     const [password, setPassword] = useState("");
     const [confirm, setConfirm] = useState("");
 
-    const sendRegister = () => {
+    const handleRegister = useCallback(async event => {
+        try {
+            await app
+                .auth()
+                .createUserWithEmailAndPassword(email, password);
+        }
+        catch (error) {
+            alert(error);
+        }
         console.log("Użytkownik zarejestrowany")
-    };
+    }, [email, password]);
 
     const emailInputHandler = (event) => {
         setEmail(event.target.value);
@@ -26,7 +35,7 @@ const RegisterForm = () => {
     };
 
     return (
-        <Form onSubmit={sendRegister}>
+        <Form onSubmit={handleRegister}>
             {({handleSubmit, submitting}) => <form onSubmit={handleSubmit}>
                 <div className={"fields_container"}>
                     <EmailField email={email} emailInputHandler={emailInputHandler}/>

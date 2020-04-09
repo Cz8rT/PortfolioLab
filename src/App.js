@@ -8,19 +8,22 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Logout from "./components/Logout";
+import {AuthProvider} from "./config/Auth";
 
 function App() {
     return (
-        <Router>
-            <div className={"container"}>
-                <Switch>
-                    <Route exact path='/' component={Home}/>
-                    <Route path='/logowanie' component={Login}/>
-                    <Route path='/rejestracja' component={Register}/>
-                    <Route path='/wylogowano' component={Logout}/>
-                </Switch>
-            </div>
-        </Router>
+        <AuthProvider>
+            <Router>
+                <div className={"container"}>
+                    <Switch>
+                        <Route exact path='/' component={Home}/>
+                        <Route path='/logowanie' component={Login}/>
+                        <Route path='/rejestracja' component={Register}/>
+                        <Route path='/wylogowano' component={Logout}/>
+                    </Switch>
+                </div>
+            </Router>
+        </AuthProvider>
     );
 }
 
