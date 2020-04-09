@@ -6,7 +6,6 @@ import app from "../../../config/firebase";
 const UserStatusBar = () => {
     const [logout, setLogout] = useState(false);
     const currentUser = useContext(AuthContext);
-
     const handleLogout = useCallback(async event => {
         try {
             await app
