@@ -1,16 +1,27 @@
-import React, {useState} from "react";
+import React, {useState, useCallback, useContext} from "react";
 import {Form} from "react-final-form";
-import {Link} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
+import app from "../../../config/firebase";
+import {AuthContext} from "../../../config/Auth";
 import EmailField from "./LoginFields/EmailField/EmailField";
 import PasswordField from "./LoginFields/PasswordField/PasswordField";
 
 const LoginForm = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const currentUser = useContext(AuthContext);
 
-    const sendLogin = () => {
-        console.log("zalogowano")
-    };
+    const handleLogin = useCallback(async event => {
+        try {
+            await app
+                .auth()
+                .signInWithEmailAndPassword(email, password);
+            console.log("zalogowano");
+        }
+        catch (error) {
+            alert(error)
+        }
+    }, [email, password]);
 
     const emailInputHandler = (event) => {
         setEmail(event.target.value);
@@ -20,8 +31,13 @@ const LoginForm = () => {
         setPassword(event.target.value);
     };
 
+    if (currentUser) {
+        return (
+            <Redirect to={"/"}/>
+        )
+    }
     return (
-        <Form onSubmit={sendLogin}>
+        <Form onSubmit={handleLogin}>
             {({handleSubmit, submitting}) => <form onSubmit={handleSubmit}>
                 <div className={"fields_container"}>
                     <EmailField email={email} emailInputHandler={emailInputHandler}/>

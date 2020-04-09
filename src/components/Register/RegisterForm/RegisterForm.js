@@ -1,7 +1,8 @@
-import React, {useState, useCallback} from "react";
+import React, {useState, useCallback, useContext} from "react";
 import app from "../../../config/firebase";
 import {Form} from "react-final-form";
-import {Link} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
+import {AuthContext} from "../../../config/Auth";
 import EmailField from "../../Login/LoginForm/LoginFields/EmailField/EmailField";
 import PasswordField from "../../Login/LoginForm/LoginFields/PasswordField/PasswordField";
 
@@ -9,17 +10,17 @@ const RegisterForm = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirm, setConfirm] = useState("");
-
+    const currentUser = useContext(AuthContext);
     const handleRegister = useCallback(async event => {
         try {
             await app
                 .auth()
                 .createUserWithEmailAndPassword(email, password);
+            console.log("Użytkownik zarejestrowany")
         }
         catch (error) {
             alert(error);
         }
-        console.log("Użytkownik zarejestrowany")
     }, [email, password]);
 
     const emailInputHandler = (event) => {
@@ -34,6 +35,11 @@ const RegisterForm = () => {
         setConfirm(event.target.value);
     };
 
+    if (currentUser) {
+        return (
+            <Redirect to={"/"}/>
+        )
+    }
     return (
         <Form onSubmit={handleRegister}>
             {({handleSubmit, submitting}) => <form onSubmit={handleSubmit}>
